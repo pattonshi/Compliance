@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欧盟玩具安全新规：电商平台审核指南</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">   
+    <style>
+        body {
+            font-family: 'Noto Sans SC', 'Poppins', sans-serif;
+            background-color: #FFFFFF;
+        }
+        .card {
+            background-color: white;
+            border: 1px solid #E5E7EB;
+            border-radius: 1.25rem; /* 20px */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            overflow: hidden;
+            position: relative;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+        }
+        .highlight-gradient-blue {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0), rgba(59, 130, 246, 0.05));
+        }
+        .highlight-gradient-green {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0), rgba(16, 185, 129, 0.05));
+        }
+        .highlight-gradient-amber {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0), rgba(245, 158, 11, 0.05));
+        }
+        .highlight-gradient-red {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0), rgba(239, 68, 68, 0.05));
+        }
+        .highlight-gradient-purple {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0), rgba(168, 85, 247, 0.05));
+        }
+        .highlight-gradient-cyan {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0), rgba(6, 182, 212, 0.05));
+        }
+        .highlight-gradient-orange {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0), rgba(249, 115, 22, 0.05));
+        }
+        .number-highlight {
+            background: linear-gradient(135deg, #6366F1, #8B5CF6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0.5rem;
+            top: 0.5rem;
+            bottom: -1rem;
+            width: 2px;
+            background-color: #E5E7EB;
+        }
+        .timeline-item:last-child::before {
+            display: none;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 50%;
+            background-color: #6366F1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.75rem;
+        }
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .table-highlight {
+            background-color: rgba(59, 130, 246, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <div class="max-w-7xl mx-auto p-4 md:p-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
+            
+            <!-- 标题卡片 -->
+            <div class="card md:col-span-4 p-8 flex flex-col justify-center relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-blue"></div>
+                <div class="relative">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-gavel text-3xl text-blue-500 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl md:text-4xl font-bold text-gray-800">欧盟玩具安全新规</h1>
+                            <p class="text-lg text-gray-500 font-light">电商平台审核指南与合规策略</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-3 mt-6">
+                        <span class="tag bg-blue-100 text-blue-800">数字产品护照</span>
+                        <span class="tag bg-green-100 text-green-800">化学安全升级</span>
+                        <span class="tag bg-amber-100 text-amber-800">物理安全强化</span>
+                        <span class="tag bg-red-100 text-red-800">认证流程变革</span>
+                        <span class="tag bg-purple-100 text-purple-800">心理健康评估</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 背景与目标 -->
+            <div class="card md:col-span-2 p-6 flex flex-col relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-green"></div>
+                <div class="relative flex-grow">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                        <i class="fa-solid fa-bullseye text-green-500 mr-3"></i>背景与目标
+                    </h2>
+                    <p class="text-gray-600 mb-4">2025年10月13日，欧盟理事会正式批准了新的《玩具安全法规》(TSR)草案，标志着欧盟玩具安全监管进入新阶段。</p>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <p class="text-gray-600"><strong>从指令升级为法规</strong>，在所有欧盟成员国直接适用</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <p class="text-gray-600"><strong>引入数字产品护照(DPP)</strong>，全面革新监管模式</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <p class="text-gray-600"><strong>2025年11月25日</strong>欧洲议会通过新规则</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <p class="text-gray-600"><strong>54个月(约4.5年)</strong>过渡期，预计2030年全面执行</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 过渡期倒计时 -->
+            <div class="card md:col-span-2 p-6 flex flex-col justify-center items-center text-center relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-amber"></div>
+                <div class="relative">
+                    <i class="fa-solid fa-hourglass-half text-6xl text-amber-500 mb-4"></i>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">过渡期倒计时</h3>
+                    <div class="number-highlight text-5xl font-black mb-2">54</div>
+                    <p class="text-gray-600">个月后全面执行</p>
+                    <p class="text-gray-500 text-sm mt-4">预计2030年在所有欧盟和欧洲经济区国家全面执行</p>
+                </div>
+            </div>
+
+            <!-- 化学物质要求升级 -->
+            <div class="card md:col-span-4 p-6 flex flex-col relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-red"></div>
+                <div class="relative flex-grow">
+                    <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i class="fa-solid fa-flask-vial text-red-500 mr-3"></i>化学物质要求的全面升级
+                    </h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">禁用物质清单大幅扩展</h3>
+                            <div class="grid grid-cols-2 gap-2">
+                                <div class="bg-red-50 p-3 rounded-lg">
+                                    <p class="text-sm font-medium text-red-800">内分泌干扰物(EDC)</p>
+                                </div>
+                                <div class="bg-red-50 p-3 rounded-lg">
+                                    <p class="text-sm font-medium text-red-800">特定靶器官毒性物质(STOT)</p>
+                                </div>
+                                <div class="bg-red-50 p-3 rounded-lg">
+                                    <p class="text-sm font-medium text-red-800">呼吸道致敏物质</p>
+                                </div>
+                                <div class="bg-red-50 p-3 rounded-lg">
+                                    <p class="text-sm font-medium text-red-800">皮肤致敏物质</p>
+                                </div>
+                                <div class="bg-red-50 p-3 rounded-lg">
+                                    <p class="text-sm font-medium text-red-800">持久性、生物累积性和毒性物质(PBT)</p>
+                                </div>
+                                <div class="bg-red-50 p-3 rounded-lg">
+                                    <p class="text-sm font-medium text-red-800">高持久性、高生物累积性物质(vPvB)</p>
+                                </div>
+                                <div class="bg-red-50 p-3 rounded-lg">
+                                    <p class="text-sm font-medium text-red-800">持久性、高移动性物质(PMT)</p>
+                                </div>
+                                <div class="bg-red-50 p-3 rounded-lg">
+                                    <p class="text-sm font-medium text-red-800">高持久性、高移动性物质(vPvM)</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 p-4 bg-red-50 rounded-lg">
+                                <p class="text-sm font-medium text-red-800 mb-2">特别关注：</p>
+                                <ul class="text-sm text-red-700 space-y-1">
+                                    <li>• 禁止在玩具中故意使用全氟烷基和多氟烷基物质(PFAS)</li>
+                                    <li>• 禁止使用双酚类物质，特别是双酚A(BPA)</li>
+                                    <li>• 36个月以下儿童使用的玩具和设计为放入口中的玩具完全禁止使用任何香精</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">重金属限值严格化</h3>
+                            <div class="overflow-x-auto">
+                                <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                                    <thead>
+                                        <tr class="bg-gray-50">
+                                            <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">重金属元素</th>
+                                            <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">旧标准限值</th>
+                                            <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">新标准限值</th>
+                                            <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">降幅</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-gray-200">
+                                        <tr class="table-highlight">
+                                            <td class="px-4 py-2 text-sm font-medium text-gray-900">铅(Pb)</td>
+                                            <td class="px-4 py-2 text-sm text-gray-500">13.5 mg/kg</td>
+                                            <td class="px-4 py-2 text-sm text-gray-900">2.0 mg/kg</td>
+                                            <td class="px-4 py-2 text-sm text-red-600 font-medium">85%</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-2 text-sm font-medium text-gray-900">镉(Cd)</td>
+                                            <td class="px-4 py-2 text-sm text-gray-500">75 mg/kg</td>
+                                            <td class="px-4 py-2 text-sm text-gray-900">1.3 mg/kg</td>
+                                            <td class="px-4 py-2 text-sm text-red-600 font-medium">98%</td>
+                                        </tr>
+                                        <tr class="table-highlight">
+                                            <td class="px-4 py-2 text-sm font-medium text-gray-900">汞(Hg)</td>
+                                            <td class="px-4 py-2 text-sm text-gray-500">60 mg/kg</td>
+                                            <td class="px-4 py-2 text-sm text-gray-900">0.1 mg/kg</td>
+                                            <td class="px-4 py-2 text-sm text-red-600 font-medium">98.3%</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-2 text-sm font-medium text-gray-900">铬(Cr)</td>
+                                            <td class="px-4 py-2 text-sm text-gray-500">60 mg/kg</td>
+                                            <td class="px-4 py-2 text-sm text-gray-900">0.02 mg/kg</td>
+                                            <td class="px-4 py-2 text-sm text-red-600 font-medium">99.7%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-4">* 管控范围从原来的8种扩展到19种元素，新增了铝、钴等元素的限制要求</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 新增化学物质专项管控 -->
+            <div class="card md:col-span-4 p-6 flex flex-col relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-purple"></div>
+                <div class="relative flex-grow">
+                    <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i class="fa-solid fa-vials text-purple-500 mr-3"></i>新增化学物质的专项管控
+                    </h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-purple-50 p-5 rounded-lg">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-cube text-purple-500 mr-2"></i>
+                                <h3 class="text-lg font-semibold text-purple-800">EN71-15:2025</h3>
+                            </div>
+                            <p class="text-sm text-purple-700 mb-2"><strong>发泡玩具材料中的甲酰胺</strong></p>
+                            <ul class="text-sm text-purple-600 space-y-1">
+                                <li>• 甲酰胺含量≤200mg/kg</li>
+                                <li>• 适用范围：拼图地垫、玩具沙发、填充玩具等</li>
+                                <li>• 超标需遵守玩具安全指令附录中规定的排放限值</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-purple-50 p-5 rounded-lg">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-fire-extinguisher text-purple-500 mr-2"></i>
+                                <h3 class="text-lg font-semibold text-purple-800">EN71-16:2025</h3>
+                            </div>
+                            <p class="text-sm text-purple-700 mb-2"><strong>玩具材料中的氯化磷阻燃剂</strong></p>
+                            <ul class="text-sm text-purple-600 space-y-1">
+                                <li>• TCEP、TCPP、TDCP每种物质均≤5mg/kg</li>
+                                <li>• 适用范围：塑料部件、涂层、纺织品、电子元件绝缘材料等</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-purple-50 p-5 rounded-lg">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-droplet text-purple-500 mr-2"></i>
+                                <h3 class="text-lg font-semibold text-purple-800">EN71-17:2025</h3>
+                            </div>
+                            <p class="text-sm text-purple-700 mb-2"><strong>水性玩具材料中的异噻唑啉酮类防腐剂</strong></p>
+                            <ul class="text-sm text-purple-600 space-y-1">
+                                <li>• MIT≤0.25mg/kg，CIT≤0.75mg/kg，BIT≤5.0mg/kg</li>
+                                <li>• 适用范围：手指画颜料、黏土、泡泡水等</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <p class="text-sm text-gray-600 mt-4">* 这三项标准将于2025年8月底前在各成员国实施，与现行国家标准冲突的部分将被取代</p>
+                </div>
+            </div>
+
+            <!-- 物理安全要求强化 -->
+            <div class="card md:col-span-2 p-6 flex flex-col relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-cyan"></div>
+                <div class="relative flex-grow">
+                    <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i class="fa-solid fa-shield-halved text-cyan-500 mr-3"></i>物理安全要求的强化与细化
+                    </h2>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-cyan-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-semibold text-cyan-800 mb-2">小零件和锐利边缘管控</h3>
+                            <ul class="text-sm text-cyan-700 space-y-1">
+                                <li>• 36个月以下儿童玩具滥用测试后，不得产生直径≤31.7mm的部件</li>
+                                <li>• 所有可触及边缘半径需≥0.5mm</li>
+                                <li>• 金属边缘厚度需≥0.5mm</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-cyan-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-semibold text-cyan-800 mb-2">拉力、扭力和跌落测试</h3>
+                            <ul class="text-sm text-cyan-700 space-y-1">
+                                <li>• 附着小部件需承受90N力持续10秒不脱落</li>
+                                <li>• 36个月以下儿童玩具部件需经20N拉力测试不脱落</li>
+                                <li>• 毛绒玩具缝合处需承受≥70N拉力</li>
+                                <li>• 跌落测试：85cm高度，重复3-5次</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-cyan-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-semibold text-cyan-800 mb-2">磁性部件严格限制</h3>
+                            <ul class="text-sm text-cyan-700 space-y-1">
+                                <li>• 磁通量指数≥50kG²mm²的磁性部件纳入高风险管控</li>
+                                <li>• 能完全放入小零件测试筒的磁铁，磁通量指数必须<50kG²mm²</li>
+                                <li>• 两个磁体间距≤50mm时吸附力超过0.5N即判定为不合格</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 声响玩具噪音控制 -->
+            <div class="card md:col-span-2 p-6 flex flex-col relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-orange"></div>
+                <div class="relative flex-grow">
+                    <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i class="fa-solid fa-volume-high text-orange-500 mr-3"></i>声响玩具的噪音控制
+                    </h2>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                            <thead>
+                                <tr class="bg-gray-50">
+                                    <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">玩具类型</th>
+                                    <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">儿童年龄</th>
+                                    <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">连续噪音限值</th>
+                                    <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">脉冲噪音限值</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr class="bg-orange-50">
+                                    <td class="px-4 py-2 text-sm font-medium text-gray-900">近耳玩具</td>
+                                    <td class="px-4 py-2 text-sm text-gray-500">&lt;18个月</td>
+                                    <td class="px-4 py-2 text-sm text-gray-900">≤60 dB(A)</td>
+                                    <td class="px-4 py-2 text-sm text-gray-900">≤75 dB(C)</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-2 text-sm font-medium text-gray-900">近耳玩具</td>
+                                    <td class="px-4 py-2 text-sm text-gray-500">18-36个月</td>
+                                    <td class="px-4 py-2 text-sm text-gray-900">≤65 dB(A)</td>
+                                    <td class="px-4 py-2 text-sm text-gray-900">≤85 dB(C)</td>
+                                </tr>
+                                <tr class="bg-orange-50">
+                                    <td class="px-4 py-2 text-sm font-medium text-gray-900">近耳玩具</td>
+                                    <td class="px-4 py-2 text-sm text-gray-500">&gt;36个月</td>
+                                    <td class="px-4 py-2 text-sm text-gray-900">≤80 dB(A)</td>
+                                    <td class="px-4 py-2 text-sm text-gray-900">≤110 dB(C)</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-2 text-sm font-medium text-gray-900">手持/桌面玩具</td>
+                                    <td class="px-4 py-2 text-sm text-gray-500">-</td>
+                                    <td class="px-4 py-2 text-sm text-gray-900">-</td>
+                                    <td class="px-4 py-2 text-sm text-gray-900">≤115 dB(C)</td>
+                                </tr>
+                                <tr class="bg-orange-50">
+                                    <td class="px-4 py-2 text-sm font-medium text-gray-900">摇铃/挤压玩具</td>
+                                    <td class="px-4 py-2 text-sm text-gray-500">-</td>
+                                    <td class="px-4 py-2 text-sm text-gray-900">-</td>
+                                    <td class="px-4 py-2 text-sm text-gray-900">≤90 dB(C)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="mt-4 p-4 bg-orange-50 rounded-lg">
+                        <p class="text-sm font-medium text-orange-800">重要变化：</p>
+                        <p class="text-sm text-orange-700 mt-1">部分近耳玩具的连续噪音限值从80dB降低到70dB，C加权峰值声压从115dB降低到110dB</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 数字产品护照 -->
+            <div class="card md:col-span-4 p-6 flex flex-col relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-blue"></div>
+                <div class="relative flex-grow">
+                    <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i class="fa-solid fa-passport text-blue-500 mr-3"></i>数字产品护照(DPP)的全面推行
+                    </h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-blue-50 p-5 rounded-lg">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-qrcode text-blue-500 mr-2"></i>
+                                <h3 class="text-lg font-semibold text-blue-800">技术要求</h3>
+                            </div>
+                            <ul class="text-sm text-blue-700 space-y-2">
+                                <li>• 每个玩具必须配备唯一的数字标识（如二维码或RFID标签）</li>
+                                <li>• 消费者无需下载软件、注册或输入密码即可访问</li>
+                                <li>• 在线销售时，必须允许买家在购买完成前看到指向DPP的链接</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-5 rounded-lg">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-file-invoice text-blue-500 mr-2"></i>
+                                <h3 class="text-lg font-semibold text-blue-800">内容要求</h3>
+                            </div>
+                            <ul class="text-sm text-blue-700 space-y-2">
+                                <li>• 合规性证明：EC符合性声明、CE标志的数字版本</li>
+                                <li>• 产品溯源信息：制造商名称和地址、生产批次号、生产日期</li>
+                                <li>• 材料成分清单：精确到每种塑料、涂料、纺织品</li>
+                                <li>• 化学安全测试报告：REACH、POPs、PAHs等测试结果</li>
+                                <li>• 安全警告和使用说明：多语言版本</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-5 rounded-lg">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-gavel text-blue-500 mr-2"></i>
+                                <h3 class="text-lg font-semibold text-blue-800">监管价值</h3>
+                            </div>
+                            <ul class="text-sm text-blue-700 space-y-2">
+                                <li>• 市场监管和海关检查更加简便高效</li>
+                                <li>• 实现玩具安全监管的数字化转型</li>
+                                <li>• 监管机构可实时验证产品合规性</li>
+                                <li>• 快速识别和处理不合格产品</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                        <p class="text-sm font-medium text-blue-800">实施时间表：</p>
+                        <p class="text-sm text-blue-700 mt-1">欧盟委员会将在TSR生效后12个月内通过授权法案，明确DPP相关技术要求，并发布实施指南及定制化指引</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CE认证流程变化 -->
+            <div class="card md:col-span-2 p-6 flex flex-col relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-green"></div>
+                <div class="relative flex-grow">
+                    <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i class="fa-solid fa-certificate text-green-500 mr-3"></i>CE认证流程的新变化
+                    </h2>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-semibold text-green-800 mb-2">风险分级管理</h3>
+                            <ul class="text-sm text-green-700 space-y-1">
+                                <li>• 高风险玩具（含电子元件、化学材料、小部件等）需100%验货或验厂</li>
+                                <li>• 低风险产品（如部分毛绒玩具）可简化流程</li>
+                                <li>• 2025年起，取消传统的"一次性模式"与"注册模式"</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-semibold text-green-800 mb-2">公告机构强制介入</h3>
+                            <ul class="text-sm text-green-700 space-y-1">
+                                <li>• 涉及电子支付、网络连接、高压组件或复杂机械结构的产品，强制需由欧盟公告机构发证</li>
+                                <li>• 2025年8月1日起，涉及网络连接、个人数据处理的玩具需额外符合EN 18031网络安全标准</li>
+                                <li>• 若制造商未采用欧盟官方公报上发布的完全协调标准，必须由欧盟公告机构参与符合性评定</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-semibold text-green-800 mb-2">认证标准更新</h3>
+                            <ul class="text-sm text-green-700 space-y-1">
+                                <li>• 电子玩具需符合更新版EN62115标准，新增电磁场（EMF）风险评估要求</li>
+                                <li>• 新增有机化合物迁移测试（EN71-9），涵盖19种有害物质</li>
+                                <li>• 填充物需通过EN71-12微生物测试，防止霉菌滋生</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 心理健康评估要求 -->
+            <div class="card md:col-span-2 p-6 flex flex-col relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-amber"></div>
+                <div class="relative flex-grow">
+                    <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i class="fa-solid fa-brain text-amber-500 mr-3"></i>数字玩具的心理健康评估要求
+                    </h2>
+                    
+                    <p class="text-gray-600 mb-4">新规在玩具安全评估中首次引入了心理健康和认知发展风险评估，这是玩具安全监管史上的重大创新。</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-amber-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-semibold text-amber-800 mb-2">心理风险评估</h3>
+                            <ul class="text-sm text-amber-700 space-y-1">
+                                <li>• 游戏沉迷机制评估：评估玩具是否存在诱导儿童过度沉迷的设计元素</li>
+                                <li>• 内容适宜性评估：评估玩具内容对不同年龄段儿童的适宜性</li>
+                                <li>• 社交互动影响：评估玩具的社交功能对儿童人际交往能力的影响</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-amber-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-semibold text-amber-800 mb-2">认知发展评估</h3>
+                            <ul class="text-sm text-amber-700 space-y-1">
+                                <li>• 学习效果评估：评估玩具是否真正促进儿童认知发展</li>
+                                <li>• 注意力影响：评估玩具对儿童注意力发展的影响</li>
+                                <li>• 思维模式塑造：评估玩具可能塑造的思维模式</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-amber-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-semibold text-amber-800 mb-2">人工智能玩具特殊要求</h3>
+                            <p class="text-sm text-amber-700">根据欧盟法规(EU)2024/1689，将人工智能系统作为安全组件且需经第三方符合性评定的玩具，应归类为高风险人工智能系统。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 卖家注册商品的平台审核新要求 -->
+            <div class="card md:col-span-4 p-6 flex flex-col relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-red"></div>
+                <div class="relative flex-grow">
+                    <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i class="fa-solid fa-store text-red-500 mr-3"></i>卖家注册商品的平台审核新要求
+                    </h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">电商平台的合规义务升级</h3>
+                            <div class="bg-red-50 p-4 rounded-lg mb-4">
+                                <ul class="text-sm text-red-700 space-y-2">
+                                    <li>• 平台必须设计其系统，允许卖家在购买完成前显示CE标志、安全警告和指向DPP的链接</li>
+                                    <li>• 所有在线销售的玩具必须带有清晰可见的DPP，显示符合相关安全规则</li>
+                                    <li>• 平台必须明确显示所有列出玩具的警告、标记和DPP链接</li>
+                                    <li>• 平台需要在欧盟安全门户（Safety Gate Portal）注册，标明单一联络点信息</li>
+                                </ul>
+                            </div>
+                            
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">文档一致性要求的严格化</h3>
+                            <div class="bg-red-50 p-4 rounded-lg">
+                                <p class="text-sm font-medium text-red-800 mb-2">核心一致性要求：</p>
+                                <ul class="text-sm text-red-700 space-y-1">
+                                    <li>• 产品名称和型号：必须在测试报告、CE证书和物理产品标签上完全一致</li>
+                                    <li>• 避免使用拼音或缩写，确保所有文档使用统一的标准名称</li>
+                                    <li>• 制造商信息：名称、地址、联系方式等必须一致</li>
+                                    <li>• 认证信息：CE标志、认证机构编号等必须准确无误</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">文档上传和验证的新流程</h3>
+                            <div class="bg-red-50 p-4 rounded-lg mb-4">
+                                <p class="text-sm font-medium text-red-800 mb-2">亚马逊"直接验证制度"流程：</p>
+                                <ol class="text-sm text-red-700 space-y-1 list-decimal pl-5">
+                                    <li>卖家在"管理您的合规性（MYC）"页面提交测试请求</li>
+                                    <li>指定TIC机构收到请求后与卖家联系，安排检测或验证已有报告</li>
+                                    <li>勾选需要检测的ASIN，选择一个TIC机构</li>
+                                    <li>选择寄送样品的实验室地址</li>
+                                    <li>与TIC联系，确认报价，寄送样品</li>
+                                    <li>等待检测完成，结果将自动上传到亚马逊</li>
+                                </ol>
+                                <p class="text-sm text-red-600 mt-2">审核时间：约5-7个工作日</p>
+                            </div>
+                            
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">违规处理机制</h3>
+                            <div class="bg-red-50 p-4 rounded-lg">
+                                <p class="text-sm font-medium text-red-800 mb-2">产品处理：</p>
+                                <ul class="text-sm text-red-700 space-y-1">
+                                    <li>• 未按规定提交合格报告的商品将被禁止销售</li>
+                                    <li>• 不合规产品将被直接下架</li>
+                                    <li>• 产品将被移除销售权限，无法正常销售</li>
+                                </ul>
+                                <p class="text-sm font-medium text-red-800 mt-3 mb-2">卖家处罚：</p>
+                                <ul class="text-sm text-red-700 space-y-1">
+                                    <li>• 可能面临封店风险</li>
+                                    <li>• 多次违规将导致账号限制或封禁</li>
+                                    <li>• 需承担因产品问题造成的法律责任和经济损失</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 不同类型玩具的差异化要求 -->
+            <div class="card md:col-span-4 p-6 flex flex-col relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-purple"></div>
+                <div class="relative flex-grow">
+                    <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i class="fa-solid fa-cubes-stacked text-purple-500 mr-3"></i>不同类型玩具的差异化要求
+                    </h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-purple-50 p-5 rounded-lg">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-child-reaching text-purple-500 mr-2"></i>
+                                <h3 class="text-lg font-semibold text-purple-800">36个月以下婴幼儿玩具</h3>
+                            </div>
+                            <ul class="text-sm text-purple-700 space-y-2">
+                                <li>• 完全禁止使用任何香精</li>
+                                <li>• 滥用测试后不得产生直径≤31.7mm的部件</li>
+                                <li>• 小部件拉力测试要求更严格，需承受20N拉力不脱落</li>
+                                <li>• 重金属迁移限值最为严格，如铅从13.5mg/kg降至2.0mg/kg</li>
+                                <li>• 必须明确标注"0-3岁"使用年龄</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-purple-50 p-5 rounded-lg">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-robot text-purple-500 mr-2"></i>
+                                <h3 class="text-lg font-semibold text-purple-800">电动和智能玩具</h3>
+                            </div>
+                            <ul class="text-sm text-purple-700 space-y-2">
+                                <li>• 需符合更新版EN62115标准</li>
+                                <li>• 工作电压≤24V DC/AC</li>
+                                <li>• 电池过热保护：130℃自动断电</li>
+                                <li>• 新增电磁场（EMF）风险评估要求</li>
+                                <li>• 2025年8月1日起，需符合EN 18031网络安全标准</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-purple-50 p-5 rounded-lg">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-magnet text-purple-500 mr-2"></i>
+                                <h3 class="text-lg font-semibold text-purple-800">磁性玩具</h3>
+                            </div>
+                            <ul class="text-sm text-purple-700 space-y-2">
+                                <li>• 磁通量指数≥50kG²mm²的磁性部件纳入高风险管控</li>
+                                <li>• 能完全放入小零件测试筒的磁铁，磁通量指数必须<50kG²mm²</li>
+                                <li>• 两个磁体间距≤50mm时吸附力超过0.5N即判定为不合格</li>
+                                <li>• 需评估肠道梗阻风险</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 平台应对策略与实施建议 -->
+            <div class="card md:col-span-4 p-6 flex flex-col relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-cyan"></div>
+                <div class="relative flex-grow">
+                    <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i class="fa-solid fa-lightbulb text-cyan-500 mr-3"></i>平台应对策略与实施建议
+                    </h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">系统改造的优先级规划</h3>
+                            <div class="space-y-4">
+                                <div class="bg-cyan-50 p-4 rounded-lg">
+                                    <p class="text-sm font-medium text-cyan-800 mb-2">第一阶段（立即执行）：</p>
+                                    <ul class="text-sm text-cyan-700 space-y-1">
+                                        <li>• DPP技术对接：开发支持DPP二维码扫描和信息展示的系统功能</li>
+                                        <li>• 文档验证系统：升级文档验证系统，实现对CE证书、测试报告等文件的自动校验</li>
+                                        <li>• 语言支持：确保平台支持英/德/法语的技术文件展示</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-cyan-50 p-4 rounded-lg">
+                                    <p class="text-sm font-medium text-cyan-800 mb-2">第二阶段（3个月内完成）：</p>
+                                    <ul class="text-sm text-cyan-700 space-y-1">
+                                        <li>• 风险分级系统：建立玩具产品风险分级管理系统</li>
+                                        <li>• 一致性校验：开发文档一致性自动校验功能</li>
+                                        <li>• TIC机构对接：与认可的TIC机构建立API接口</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">审核流程的标准化设计</h3>
+                            <div class="space-y-4">
+                                <div class="bg-cyan-50 p-4 rounded-lg">
+                                    <p class="text-sm font-medium text-cyan-800 mb-2">自动审核（第一级）：</p>
+                                    <ul class="text-sm text-cyan-700 space-y-1">
+                                        <li>• 文档完整性检查：确保所有必需文档已提交</li>
+                                        <li>• 格式验证：检查文档格式是否符合要求</li>
+                                        <li>• 一致性校验：自动比对产品名称、型号、制造商信息等关键数据</li>
+                                        <li>• 有效期检查：验证证书和测试报告的有效性</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-cyan-50 p-4 rounded-lg">
+                                    <p class="text-sm font-medium text-cyan-800 mb-2">人工审核（第三级）：</p>
+                                    <ul class="text-sm text-cyan-700 space-y-1">
+                                        <li>• 复杂案例处理：针对系统无法自动判断的复杂情况</li>
+                                        <li>• 风险评估：对高风险产品进行深入的合规性评估</li>
+                                        <li>• 投诉处理：处理消费者投诉和监管部门的问询</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 结语 -->
+            <div class="card md:col-span-4 p-6 flex flex-col justify-center text-center relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-blue"></div>
+                <div class="relative">
+                    <i class="fa-solid fa-flag-checkered text-5xl text-blue-500 mb-4"></i>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">结语</h2>
+                    <p class="text-gray-600 mb-6 max-w-3xl mx-auto">
+                        欧盟玩具安全新规的实施标志着玩具安全监管进入了数字化、标准化、精细化的新时代。作为电商平台运营者，您面临着前所未有的挑战和机遇。通过提前布局和系统准备，您的平台将能够在新的监管环境下实现可持续发展，为消费者提供更加安全、可靠的玩具产品。
+                    </p>
+                    <div class="font-semibold text-gray-800 text-lg">
+                        合规是底线，安全是责任。让我们共同努力，为儿童创造一个更加安全的玩具消费环境。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
